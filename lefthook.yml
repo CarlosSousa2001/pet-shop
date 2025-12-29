@@ -1,0 +1,21 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: eslint (staged)
+      run: npm run lint:fix -- {staged_files}
+      glob: "*.{js,jsx,ts,tsx}"
+
+    - name: prettier (staged)
+      run: npx prettier --write {staged_files}
+      glob: "*.{js,jsx,ts,tsx,css,md,json,yml,yaml}"
+
+pre-push:
+  jobs:
+    - name: typecheck
+      run: npm run typecheck
+
+    - name: lint
+      run: npm run lint
+
+    - name: build
+      run: npm run build
