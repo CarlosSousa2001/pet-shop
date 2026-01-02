@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📅 Dashboard de Agendamentos
 
-## Getting Started
+Projeto desenvolvido durante um curso da **Rocketseat**, com foco na construção de um **dashboard de agendamentos moderno**, explorando conceitos que vão além do básico, mesmo em um cenário aparentemente simples.
 
-First, run the development server:
+A aplicação permite **visualizar e filtrar agendamentos por data**, organizando as sessões em **manhã, tarde e noite**, além de introduzir práticas atuais do ecossistema React e Next.js.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img width="391" height="842" alt="image" src="https://github.com/user-attachments/assets/90ff271c-2fdd-41cf-9566-de796a4dfb2e" />
+<img width="391" height="843" alt="image" src="https://github.com/user-attachments/assets/1fd389e2-38b9-478e-9294-06263389cb36" />
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧭 Sobre o projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Apesar de ser um dashboard de agendamentos, o projeto aborda **conceitos avançados de frontend e backend**, como:
 
-## Learn More
+- Organização de dados por períodos do dia
+- Filtros dinâmicos por data
+- Uso progressivo de **Server Actions**
+- Integração completa com banco de dados relacional
 
-To learn more about Next.js, take a look at the following resources:
+O objetivo principal é consolidar boas práticas modernas utilizando o **ecossistema mais recente do Next.js**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Funcionalidades
 
-## Deploy on Vercel
+- 📆 Visualização de agendamentos por data
+- 🌅 Separação de sessões por **manhã, tarde e noite**
+- 🔎 Filtro de datas de forma intuitiva
+- ⚡️ Uso de **Server Actions** para operações no backend
+- 🎨 Interface moderna e responsiva
+- 🧩 Estrutura organizada e escalável
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧠 Tecnologias e Ferramentas
+
+- **Next.js (versão mais recente)**  
+- **TypeScript** para tipagem estática e segurança
+- **Tailwind CSS** para estilização rápida e consistente
+- **Prisma ORM** para acesso ao banco de dados
+- **PostgreSQL** como banco relacional
+- **Server Actions** para comunicação server-side
+- **App Router** para navegação moderna
