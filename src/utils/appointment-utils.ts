@@ -1,4 +1,4 @@
-import { Appointment as AppointmentPrisma } from '@/generated/prisma/browser';
+import { Appointment as AppointmentPrisma } from '../../generated/prisma/';
 import {
   Appointment,
   AppointmentPeriod,
@@ -48,10 +48,22 @@ export function groupAppointmentByPeriod(
       appointments: afternoonAppointments,
     },
     {
-      title: 'Manhã',
+      title: 'Noite',
       type: 'evening',
       timeRange: '19h-21h',
       appointments: eveningAppointments,
     },
   ];
+}
+
+export function calculatePeriod(hour: number) {
+  const isMorning = hour >= 9 && hour < 12;
+  const isAfternoon = hour >= 13 && hour < 18;
+  const isEvening = hour >= 19 && hour < 21;
+
+  return {
+    isMorning,
+    isAfternoon,
+    isEvening,
+  };
 }
