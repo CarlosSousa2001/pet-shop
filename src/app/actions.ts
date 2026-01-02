@@ -1,6 +1,6 @@
 'use server';
 import prisma from '@/lib/prisma';
-import { calculatePeriod } from '@/utils';
+import { calculatePeriod, formartDateTime } from '@/utils';
 import { revalidatePath } from 'next/cache';
 import z from 'zod';
 
@@ -21,7 +21,7 @@ export async function createAppointment(data: AppointmentData) {
 
     const { scheduleAt } = parsedData;
 
-    const hour = scheduleAt.getHours();
+    const hour = parseInt(formartDateTime(scheduleAt));
 
     const { isMorning, isAfternoon, isEvening } = calculatePeriod(hour);
 
@@ -74,7 +74,7 @@ export async function updateAppointment(id: string, data: AppointmentData) {
     const parsedData = appointmentFormSchema.parse(data);
 
     const { scheduleAt } = parsedData;
-    const hour = scheduleAt.getHours();
+    const hour = parseInt(formartDateTime(scheduleAt));
 
     const { isMorning, isAfternoon, isEvening } = calculatePeriod(hour);
 

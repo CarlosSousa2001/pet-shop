@@ -28,7 +28,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Calendar } from '../ui/calendar';
-import z from 'zod';
+import z, { set } from 'zod';
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -104,8 +104,10 @@ export const AppointmentForm = ({
   const onSubmit = async (data: AppointFormValues) => {
     const [hour, minute] = data.time.split(':');
 
-    const scheduleAt = new Date(data.scheduleAt);
-    scheduleAt.setHours(Number(hour), Number(minute), 0, 0);
+    const scheduleAt = setMinutes(
+      setHours(data.scheduleAt, Number(hour)),
+      Number(minute)
+    );
 
     const isEdit = !!appointment?.id;
 
